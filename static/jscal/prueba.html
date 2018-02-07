@@ -1,0 +1,47 @@
+<html>
+<head>
+<title>titulo</title>
+<link type="text/css" rel="stylesheet" href="src/css/jscal2.css" />
+<link type="text/css" rel="stylesheet" href="src/css/border-radius.css" />
+<script src="src/js/jscal2.js"></script>
+<script src="src/js/unicode-letter.js"></script>
+<script src="src/js/lang/es.js"></script>
+</head>
+
+<body>
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
+<form action='' name=hola' method='post'>
+<input type='text' name='hola0' id='hola0' value='2011.05.20'>
+<input type='text' name='hola1' id='hola1'>
+<button id='disparador'>
+<script type="text/javascript">
+	var prueba = document.getElementById('hola0').value;
+	var prueba1 = prueba.slice(0,4)+prueba.slice(5,7)+prueba.slice(8,10)
+	//prueba.replace("/./", "");
+	//alert(prueba1);
+	var numero = new Number(prueba1)
+	//alert(numero)
+
+   RANGE_CAL2 =  new Calendar({
+        trigger    : "disparador",
+        inputField : "hola1", 
+	min        : 20110505,
+	max	   : '+new Number(prueba1)+',
+	onSelect   : function() { this.hide() }
+    });
+	alert(Calendar.max);
+</script>
+</form>
+
+</body>
+</html>
