@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='jscal/src/css/jscal2.css') }}" />
+<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='jscal/src/css/border-radius.css') }}" />
+<script src="{{ url_for('static', filename='jscal/src/js/jscal2.js') }}"></script>
+<script src="{{ url_for('static', filename='jscal/src/js/unicode-letter.js') }}"></script>
+<script src="{{ url_for('static', filename='jscal/src/js/lang/es.js') }}"></script>
+</head>
+<body>
+
+<form action="action_page.html" method="POST">
+   Start Date (dd/mm/yyyy):<br>
+   <input type="text" size="10" maxlength="10" name="dini" id="dini" value="" />
+   <input type="button" id="cal1" value="..." />
+   <script type="text/javascript">
+   var LEFT_CAL = Calendar.setup({
+   	trigger    : "cal1",
+        inputField : "dini",
+        dateFormat : "%d/%m/%Y",
+        onSelect   : function() { this.hide() }
+   })
+   </script>
+   <br>
+   Start Hour<br>
+   <input type="text" name="hini" value="" size="2">
+   <br><br>
+   End Date (dd/mm/yyyy):<br>
+   <input type="text" size="10" maxlength="10" name="dend" id="dend" value="" />
+   <input type="button" id="cal2" value="..." />
+   <script type="text/javascript">
+   var LEFT_CAL = Calendar.setup({
+   	trigger    : "cal2",
+        inputField : "dend",
+        dateFormat : "%d/%m/%Y",
+        onSelect   : function() { this.hide() }
+   })
+   </script>
+   <br>
+   End Hour<br>
+   <input type="text" name="hend" value="" size="2">
+   <br><br>
+   Trip Mileage:<br>
+   <input type="text" name="mileage" value="">
+  <br><br>
+  <input type="submit" value="Submit">
+</form>
+
+</body>
+</html>

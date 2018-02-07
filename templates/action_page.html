@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+PRICE FOR RENT:
+<table width="50%">
+<tr>
+<th><b>Truck type</b></th>
+<th><b>Hours</b></th>
+<th><b>Price</b></th>
+</tr>
+{% for i in rent.result %}
+<tr>
+<td>{{ i.bus_type }}</td>
+<td>{{ i.hours }}</td>
+<td align="right">${{ i.price }}</td>
+</tr>
+{% endfor %}
+</table>
+
+<a href="/">Back to form</a>
+
+</body>
+</html>
+
